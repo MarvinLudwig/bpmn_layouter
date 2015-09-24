@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/eu.ml82.bpmn_layouter.feature_0.9.0.jar" id="eu.ml82.bpmn_layouter.feature" version="0.9.0">
+      <category name="bpmn_layouter"/>
+   </feature>
+   <category-def name="bpmn_layouter" label="BPMN Layouter"/>
+</site>

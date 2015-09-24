@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="de.cau.cs.kieler.kiml.service.layoutManagers">
+      <manager
+            class="eu.ml82.bpmn_layouter.camunda_modeler.DiagramLayoutManager">
+      </manager>
+   </extension>   
+   
+   <extension
+         point="de.cau.cs.kieler.kiml.layoutProviders">
+      <layoutAlgorithm
+            category="eu.ml82.bpmn_layouter"
+            class="eu.ml82.bpmn_layouter.camunda_modeler.LayoutProvider"
+            description="Layer-based algorithm for BPMN, based on the KIELER layout project."
+            id="eu.ml82.bpmn_layouter"
+            name="BPMN layouter"
+            preview="images/layered.png"
+            type="de.cau.cs.kieler.type.layered">
+      <supportedFeature
+               feature="COMPOUND">
+      </supportedFeature>
+      </layoutAlgorithm>
+        <layoutOption
+            appliesTo="parents"
+            class="eu.ml82.bpmn_layouter.core.properties.BpmnElementType"
+            description="BPMN element type"
+            id="eu.ml82.bpmn_layouter.core.properties.element_type"
+            name="BPMN element type"
+            type="enum"
+            variance="0">
+      	</layoutOption>
+      	<layoutOption
+            appliesTo="parents"
+            description=""
+            id="eu.ml82.bpmn_layouter.core.properties.boundary_event_dummy_edge"
+            name=""
+            type="boolean"
+            variance="0">
+      	</layoutOption>
+      	<layoutOption
+            appliesTo="parents"
+            description=""
+            id="eu.ml82.bpmn_layouter.core.properties.id"
+            name=""
+            type="string"
+            variance="0">
+      	</layoutOption>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            description="Layout"
+            id="eu.ml82.bpmn_layouter"
+            name="Layout">
+      </category>
+      <command
+            categoryId="eu.ml82.bpmn_layouter"
+            defaultHandler="eu.ml82.bpmn_layouter.camunda_modeler.LayoutHandler"
+            id="eu.ml82.bpmn_layouter.camunda_modeler.command.layout"
+            name="Layout">
+      </command>
+     <commandParameter
+           id="de.cau.cs.kieler.kiml.ui.layoutScope"
+           name="Scope"
+           optional="true">
+     </commandParameter>
+   </extension>
+   
+   <extension
+		point="org.eclipse.ui.menus">
+		<menuContribution
+		      locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+		   <toolbar
+		         id="eu.ml82.bpmn_layouter.camunda_modeler.layout"
+		         label="KIELER Layout">
+		      <command
+		            commandId="eu.ml82.bpmn_layouter.camunda_modeler.command.layout"
+		            icon="icons/kieler-arrange.gif"
+		            label="Layout BPMN"
+		            style="push"
+		            tooltip="Layout BPMN">
+		      </command>
+		   </toolbar>
+		</menuContribution>
+		<menuContribution
+		      locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+		   <command
+		         commandId="eu.ml82.bpmn_layouter.camunda_modeler.command.layout"
+		         icon="icons/kieler-arrange.gif"
+		         id="eu.ml82.bpmn_layouter.camunda_modeler.layout"
+		         label="Layout BPMN"
+		         mnemonic=""
+		         style="push"
+		         tooltip="Layout BPMN">
+		   </command>
+		</menuContribution>
+		</extension>
+</plugin>

@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: eu.ml82.bpmn_layouter.core;singleton:=true
+Bundle-Version: 0.9.0
+Bundle-Vendor: 
+ Marvin Ludwig
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: de.cau.cs.kieler.klay.layered,
+ de.cau.cs.kieler.core.kgraph,
+ de.cau.cs.kieler.kiml.service
+Export-Package: eu.ml82.bpmn_layouter.core;
+  uses:="de.cau.cs.kieler.klay.layered.properties,
+   de.cau.cs.kieler.klay.layered,
+   de.cau.cs.kieler.kiml.options,
+   de.cau.cs.kieler.kiml,
+   de.cau.cs.kieler.core.alg,
+   de.cau.cs.kieler.klay.layered.graph,
+   de.cau.cs.kieler.core.kgraph",
+ eu.ml82.bpmn_layouter.core.properties;uses:="de.cau.cs.kieler.core.properties",
+ eu.ml82.bpmn_layouter.core.utils;uses:="de.cau.cs.kieler.klay.layered.graph"
+Bundle-Name: BPMN Layouter Core

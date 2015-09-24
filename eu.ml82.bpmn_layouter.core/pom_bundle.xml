@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>eu.ml82.bpmn_layouter</groupId>
+    <artifactId>eu.ml82.bpmn_layouter.parent</artifactId>
+    <relativePath>../eu.ml82.bpmn_layouter.parent</relativePath>
+    <version>0.9.0</version>
+  </parent>
+  <groupId>eu.ml82.bpmn_layouter</groupId>
+  <artifactId>eu.ml82.bpmn_layouter.core</artifactId>
+<packaging>eclipse-plugin</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>0.21.0</version>
+        <extensions>true</extensions>
+      </plugin>
+	<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/dependency</outputDirectory>
+                            <overWriteReleases>false</overWriteReleases>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>bundle_repackage.xml</descriptor>
+                    </descriptors>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>
+                <groupId>com.github.wvengen</groupId>
+                <artifactId>proguard-maven-plugin</artifactId>	
+                <version>2.0.11</version>	
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.proguard</groupId>
+                        <artifactId>proguard-base</artifactId>
+                        <version>5.2.1</version>
+                        <scope>runtime</scope>
+                    </dependency>
+                </dependencies>
+                <executions>
+                   <execution>
+                       <phase>package</phase>
+                       <goals><goal>proguard</goal></goals>
+                   </execution>
+                </executions>
+                <configuration>
+			<options>
+				<option>-libraryjars ${java.home}/lib/rt.jar</option>
+				<option>-injar ${project.build.directory}/${project.build.finalName}-bundle-full.jar</option>
+				<option>-outjar ${project.build.directory}/${project.build.finalName}-bundle.jar</option>
+				<option>-target 1.6</option>
+				<option>-dontoptimize</option>
+				<option>-dontobfuscate</option>
+				<option>-dontwarn</option>
+				<option>-ignorewarnings</option>
+				<option>-keep class eu.ml82.bpmn_layouter.core.** {*;}</option>
+		        </options>
+                </configuration>
+            </plugin>-->
+    </plugins>
+  </build>
+</project> 

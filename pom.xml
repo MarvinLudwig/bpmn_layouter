@@ -1,0 +1,22 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+   <groupId>eu.ml82.bpmn_layouter</groupId>
+  <artifactId>eu.ml82.bpmn_layouter.aggregator</artifactId>
+  <packaging>pom</packaging>
+  
+  <parent>
+    <groupId>eu.ml82.bpmn_layouter</groupId>
+    <artifactId>eu.ml82.bpmn_layouter.parent</artifactId>
+    <relativePath>./eu.ml82.bpmn_layouter.parent</relativePath>
+    <version>0.9.0</version>
+  </parent>
+
+  <modules>
+    <module>./eu.ml82.bpmn_layouter.camunda_modeler</module>
+    <module>./eu.ml82.bpmn_layouter.core</module>
+    <module>./eu.ml82.bpmn_layouter.feature</module>
+    <module>./eu.ml82.bpmn_layouter.updatesite</module>
+  </modules>
+</project> 
+
+

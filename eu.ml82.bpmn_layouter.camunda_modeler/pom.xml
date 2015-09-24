@@ -1,0 +1,11 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>eu.ml82.bpmn_layouter</groupId>
+    <artifactId>eu.ml82.bpmn_layouter.parent</artifactId>
+    <relativePath>../eu.ml82.bpmn_layouter.parent</relativePath>
+    <version>0.9.0</version>
+  </parent>
+  <artifactId>eu.ml82.bpmn_layouter.camunda_modeler</artifactId>
+  <packaging>eclipse-plugin</packaging>
+</project> 
