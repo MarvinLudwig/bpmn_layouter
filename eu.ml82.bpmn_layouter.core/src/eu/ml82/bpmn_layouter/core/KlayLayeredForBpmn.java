@@ -187,7 +187,7 @@ public final class KlayLayeredForBpmn {
         subProcessPostProcessing();
         
         // Debugging: Output graph as PNG image   
-        Graph.draw(lGraph, "./graph.png", PosType.ABSOLUTE);
+        // Graph.draw(lGraph, "./graph.png", PosType.ABSOLUTE);
                 
         // Make node positions relative
         if (posType == PosType.RELATIVE) RelativePositions.make(lGraph, subProcesses);
