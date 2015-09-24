@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+Release v0.9: Support for almost every BPMN element, exception: Groups are not supported yet. Soon to come.
+
 BPMN Layouter
 =====
 This BPMN auto-layouter allows you to make nice looking BPMN diagrams by one click.  
@@ -60,7 +61,3 @@ You can install this plugin via its [update site](http://www.marvin-ludwig.de/fi
 The core layout function has some indirect dependencies on Eclipse (mainly EMF) on the plugin level. Though on class level there are no Eclipse dependencies.  
 Using the Maven assembly plugin you can build a bundle with all class-level dependencies by running  
 `mvn -f pom_bundle.xml dependency:unpack-dependencies assembly:single` in the eu.ml82.bpmn_layouter.core folder.
-
-=======
-# bpmn_layouter
->>>>>>> refs/remotes/origin/master
