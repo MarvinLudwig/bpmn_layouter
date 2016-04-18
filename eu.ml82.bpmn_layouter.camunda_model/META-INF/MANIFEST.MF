@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: BPMN Layouter for Camunda model API
+Bundle-SymbolicName: eu.ml82.bpmn_layouter.camunda_model;singleton:=true
+Bundle-Version: 0.9.0
+Bundle-Vendor: Marvin Ludwig
+Require-Bundle: eu.ml82.bpmn_layouter.core,
+ de.cau.cs.kieler.core,
+ de.cau.cs.kieler.klay.layered,
+ de.cau.cs.kieler.kiml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: com.google.common.collect

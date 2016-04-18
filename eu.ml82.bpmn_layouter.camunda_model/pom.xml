@@ -1,0 +1,19 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>eu.ml82.bpmn_layouter</groupId>
+    <artifactId>eu.ml82.bpmn_layouter.parent</artifactId>
+    <relativePath>../eu.ml82.bpmn_layouter.parent</relativePath>
+    <version>0.9.0</version>
+  </parent>
+  <groupId>eu.ml82.bpmn_layouter</groupId>
+  <artifactId>eu.ml82.bpmn_layouter.camunda_model</artifactId>
+  <packaging>jar</packaging>
+  <dependencies>
+  	<dependency>
+  		<groupId>org.camunda.bpm.model</groupId>
+  		<artifactId>camunda-bpmn-model</artifactId>
+  		<version>7.4.0</version>
+  	</dependency>
+  </dependencies>
+</project>

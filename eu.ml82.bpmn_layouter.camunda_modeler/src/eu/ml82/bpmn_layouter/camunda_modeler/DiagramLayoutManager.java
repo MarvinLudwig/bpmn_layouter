@@ -23,13 +23,24 @@ import org.eclipse.bpmn2.FlowElement;
 import org.eclipse.bpmn2.Gateway;
 import org.eclipse.bpmn2.Group;
 import org.eclipse.bpmn2.SubProcess;
-import org.eclipse.bpmn2.impl.*;
+import org.eclipse.bpmn2.impl.AssociationImpl;
+import org.eclipse.bpmn2.impl.BoundaryEventImpl;
+import org.eclipse.bpmn2.impl.DataObjectReferenceImpl;
+import org.eclipse.bpmn2.impl.DataStoreReferenceImpl;
+import org.eclipse.bpmn2.impl.MessageFlowImpl;
+import org.eclipse.bpmn2.impl.SubProcessImpl;
+import org.eclipse.bpmn2.impl.TextAnnotationImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPart;
 import org.eclipse.graphiti.datatypes.IDimension;
 import org.eclipse.graphiti.mm.algorithms.AbstractText;
 import org.eclipse.graphiti.mm.algorithms.GraphicsAlgorithm;
-import org.eclipse.graphiti.mm.pictograms.*;
+import org.eclipse.graphiti.mm.pictograms.Anchor;
+import org.eclipse.graphiti.mm.pictograms.Connection;
+import org.eclipse.graphiti.mm.pictograms.ContainerShape;
+import org.eclipse.graphiti.mm.pictograms.Diagram;
+import org.eclipse.graphiti.mm.pictograms.PictogramElement;
+import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
 import org.eclipse.graphiti.services.IGaService;
 import org.eclipse.graphiti.services.IPeService;
@@ -39,13 +50,20 @@ import org.eclipse.graphiti.ui.services.GraphitiUi;
 import org.eclipse.swt.SWTException;
 import org.eclipse.ui.IWorkbenchPart;
 
-import de.cau.cs.kieler.core.kgraph.*;
+import de.cau.cs.kieler.core.kgraph.KEdge;
+import de.cau.cs.kieler.core.kgraph.KGraphElement;
+import de.cau.cs.kieler.core.kgraph.KLabel;
+import de.cau.cs.kieler.core.kgraph.KLabeledGraphElement;
+import de.cau.cs.kieler.core.kgraph.KNode;
 import de.cau.cs.kieler.core.math.KVector;
 import de.cau.cs.kieler.core.properties.IProperty;
 import de.cau.cs.kieler.kiml.config.VolatileLayoutConfig;
 import de.cau.cs.kieler.kiml.graphiti.GraphitiDiagramLayoutManager;
 import de.cau.cs.kieler.kiml.graphiti.GraphitiLayoutConfig;
-import de.cau.cs.kieler.kiml.klayoutdata.*;
+import de.cau.cs.kieler.kiml.klayoutdata.KEdgeLayout;
+import de.cau.cs.kieler.kiml.klayoutdata.KInsets;
+import de.cau.cs.kieler.kiml.klayoutdata.KLayoutData;
+import de.cau.cs.kieler.kiml.klayoutdata.KShapeLayout;
 import de.cau.cs.kieler.kiml.klayoutdata.impl.KShapeLayoutImpl;
 import de.cau.cs.kieler.kiml.options.EdgeLabelPlacement;
 import de.cau.cs.kieler.kiml.options.EdgeType;
@@ -120,7 +138,7 @@ public class DiagramLayoutManager extends GraphitiDiagramLayoutManager {
 			// This is important to identify the relationship
 			// between the boundary event and its "host"
 			// there would be some cleaner ways (without dummy edge) to achieve this
-			// but they would be more complicated afterwards.
+			// but they are more complicated afterwards.
 			KEdge dummyEdge = KimlUtil.createInitializedEdge();
 			KEdgeLayout dummyEdgeLayout = dummyEdge.getData(KEdgeLayout.class);
 			dummyEdgeLayout.setProperty(BpmnProperties.BOUNDARY_EVENT_DUMMY_EDGE, true);
