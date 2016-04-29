@@ -81,7 +81,6 @@ import eu.ml82.bpmn_layouter.core.processors.boundary_events.BpmnBoundaryEventPr
 import eu.ml82.bpmn_layouter.core.properties.BpmnElementType;
 import eu.ml82.bpmn_layouter.core.properties.BpmnProperties;
 import eu.ml82.bpmn_layouter.core.properties.PosType;
-import eu.ml82.bpmn_layouter.core.utils.Graph;
 import eu.ml82.bpmn_layouter.core.utils.Maps;
 import eu.ml82.bpmn_layouter.core.utils.Utils;
 
