@@ -1,6 +1,12 @@
 /*
- * AutoLayout
+ * Camunda BPMN model wrapper for the BPMN auto-layouter
+ *
+ * Copyright 2015 by Christophe Bertoncini
+ *
+ * This code is provided under the terms of the Eclipse Public License (EPL).
+ * See the file epl-v10.html for the license text.
  */
+
 package eu.ml82.bpmn_layouter.camunda_model;
 
 import java.util.Collection;
@@ -52,6 +58,7 @@ public class BpmnAutoLayout {
 
     // Source
     protected BpmnModelInstance modelInstance;
+	private LGraph lGraph;
 
     //
     class InnerGraphGeneration
@@ -82,12 +89,18 @@ public class BpmnAutoLayout {
     public BpmnAutoLayout(BpmnModelInstance modelInstance) {
         this.modelInstance = modelInstance;
     }
-
+    
+    /**
+     * 
+     */
+    public LGraph getLGraph() {
+        return this.lGraph;
+    }
+    
     /**
      * @throws Exception
      */
     public void autoLayout() throws Exception {
-
         this.clearDiagramInformation();
         this.createDiagramInformation();
     }
@@ -130,7 +143,7 @@ public class BpmnAutoLayout {
         }
 
         // Layout
-        graphGeneration.layout();
+        this.lGraph = graphGeneration.layout();
 
         // TODO tests
         // BufferedImage image = bpmnGraph.exportImage();

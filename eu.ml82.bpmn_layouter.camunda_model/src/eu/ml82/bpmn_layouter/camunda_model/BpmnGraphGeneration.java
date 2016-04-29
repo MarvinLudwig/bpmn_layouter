@@ -1,3 +1,12 @@
+/*
+ * Camunda BPMN model wrapper for the BPMN auto-layouter
+ *
+ * Copyright 2015 by Christophe Bertoncini
+ *
+ * This code is provided under the terms of the Eclipse Public License (EPL).
+ * See the file epl-v10.html for the license text.
+ */
+
 package eu.ml82.bpmn_layouter.camunda_model;
 
 import java.util.List;
@@ -60,13 +69,15 @@ public class BpmnGraphGeneration {
         return this.graphProcesses.get(processId);
     }
 
-    public void layout() {
+    public LGraph layout() {
 
         KlayLayeredForBpmn layouter = new KlayLayeredForBpmn();
         layouter.doLayout(bpmnGraph, PosType.ABSOLUTE);
 
         // Set nodes offset property
         this.setOffsetProperties();
+        
+        return bpmnGraph;
     }
 
     /**

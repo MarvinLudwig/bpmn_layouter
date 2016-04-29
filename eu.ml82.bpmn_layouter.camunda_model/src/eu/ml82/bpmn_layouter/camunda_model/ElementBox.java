@@ -1,3 +1,12 @@
+/*
+ * Camunda BPMN model wrapper for the BPMN auto-layouter
+ *
+ * Copyright 2015 by Christophe Bertoncini
+ *
+ * This code is provided under the terms of the Eclipse Public License (EPL).
+ * See the file epl-v10.html for the license text.
+ */
+
 package eu.ml82.bpmn_layouter.camunda_model;
 
 import de.cau.cs.kieler.core.math.KVector;
